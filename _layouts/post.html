@@ -114,10 +114,10 @@ layout: default
                    {% assign sorted_comments = (page.comments | sort: 'date') %}
                 {% endif %}
                 {% for c in sorted_comments %}
-                  <div class="media">
+                <div class="media">
                   <div class="media-left">
-                     <img src="{{ c.author.picture }}" alt="{{ c.author.displayName}}" height="73" width="73" style="border-radius:50%;">
-                 </div>
+                     <img src="{{ c.author.picture }}" alt="{{ c.author.displayName}}" height="50" width="50" style="border-radius:50%;">
+                  </div>
                 <div class="media-body">
                <p class="text-muted">
                <a href="{{ c.author.url }}">{{ c.author.displayName }}</a>
