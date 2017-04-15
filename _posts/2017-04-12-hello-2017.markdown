@@ -1,13 +1,22 @@
 ---
-layout:     post
-title:      "Hello 2017"
-subtitle:   " \"Hello World, Hello Blog\""
-date:       2017-04-12 22:00:00
-author:     XZX
-header-img: "img/post-bg-2015.jpg"
+layout: post
+title: Hello 2017
+subtitle: ' "Hello World, Hello Blog"'
+date: 2017-04-12T22:00:00.000Z
+author: "\_ \_ XZX"
+header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
-    - 生活
+  - 生活
+comments:
+  - author:
+      type: full
+      displayName: ZhenxueXu
+      url: 'https://github.com/ZhenxueXu'
+      picture: 'https://avatars3.githubusercontent.com/u/18114535?v=3&s=73'
+    content: '&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x8BC4;&#x8BBA;&#xFF01;'
+    date: 2017-04-15T18:01:44.286Z
+
 ---
 
 > “Yeah It's on. ”
