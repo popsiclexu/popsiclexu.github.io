@@ -3,7 +3,7 @@ layout:     post
 title:      "Hello 2017"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2017-04-12 22:00:00
-author:     "Xzx"
+author:     XZX
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
