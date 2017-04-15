@@ -70,7 +70,7 @@ input: GFM                            # use Github Flavored Markdown !important
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "欲带皇冠，必先承其重，<br>Want to wear the crown ，must firstly bear the heavy!"
+sidebar-about-description: "  欲带皇冠，必先承其重<br>Want to wear the crown<br>  must firstly bear the heavy!"
 sidebar-avatar: /img/p1.png     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
