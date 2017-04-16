@@ -119,7 +119,7 @@ layout: default
                      <img src="{{ c.author.picture }}" alt="{{ c.author.displayName}}" height="50" width="50" style="border-radius:50%;">
                   </div>
                 <div class="media-body">
-               <p class="text-muted" style=" padding-top: 0px; margin-top: 0px">
+               <p class="text-muted">
                <a href="{{ c.author.url }}">{{ c.author.displayName }}</a>
            on {{ c.date | date_to_string }}<br>
        {{ c.content | newline_to_br }}</p>
