@@ -101,5 +101,11 @@ friends: [
     },{
         title: "Hux",
         href: "https://github.com/Huxpro/huxpro.github.io"
+    },{
+        title: "牛客网",
+        href: "https://www.nowcoder.com"
+    },{
+        title: "stack overflow",
+        href: "http://stackoverflow.com/"
     }
 ]
