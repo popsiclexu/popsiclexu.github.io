@@ -90,31 +90,16 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "前端外刊评论",
-        href: "http://qianduan.guru/"
+        title: "Allen Iverson",
+        href: "http://blog.csdn.net/axi295309066"
     },{
-        title: "天镶的博客",
-        href: "http://lingyu.wang/"
+        title: "runoob",
+        href: "http://www.runoob.com"
     },{
-        title: "Luke 的自留地",
-        href: "http://hmqk1995.github.io"
+        title: "阮一峰",
+        href: "http://www.ruanyifeng.como"
     },{
-        title: "Ebn's Blog",
-        href: "http://ebnbin.com/"
-    },{
-        title: "SmdCn's Blog",
-        href: "http://blog.smdcn.net"
-    },{
-        title: "解旻的博客",
-        href: "http://xieminis.me/"
-    },{
-        title: "DHong Say",
-        href: "http://dhong.co"
-    },{
-        title: "尹峰以为",
-        href: "http://ingf.github.io/"
-    },{
-        title: "前端神盾局",
-        href: "http://wepiaofei.github.io/blog/"
+        title: "Hux",
+        href: "https://github.com/Huxpro/huxpro.github.io"
     }
 ]
