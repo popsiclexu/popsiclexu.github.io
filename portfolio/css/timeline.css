@@ -257,7 +257,7 @@ header img{
     padding: 0.5em 0;
 }
 .cbp_tmlabel ul li.skill{
-	overflow: auto;
+	overflow: visible;
 	margin-top: 9px;
 	border-top: 1px solid #eeefef;
 }
@@ -266,7 +266,7 @@ header img{
     display: block;
     float: left;
     font-size: 1.3rem;
-    width: 40px;
+    width: auto;
     height: 40px;
     text-align: center;
     line-height: 40px;
