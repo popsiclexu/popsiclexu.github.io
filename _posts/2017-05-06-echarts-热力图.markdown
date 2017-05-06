@@ -227,4 +227,4 @@ public class Test2 implements Serializable {
 
 ```
 我自己后台绘图的结果如下
-![](img/map.JPG)
+![](http://xzxblog.me/img/map.JPG)
