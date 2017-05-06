@@ -62,7 +62,7 @@ layout: default
 
                 <hr style="visibility: hidden;">
 
-                {% if site.duoshuo_share && site.duoshuo_username %}
+               <!--   {% if site.duoshuo_share && site.duoshuo_username %}-->
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
@@ -86,8 +86,8 @@ layout: default
                     </div>
                 <hr>
                 </div>
-                <!-- 多说 Share end-->
-                {% endif %}
+                <!-- 多说 Share end
+                {% endif %}-->
 
 
                 <ul class="pager">
@@ -206,8 +206,8 @@ layout: default
 
 
 
-{% if site.duoshuo_username %}
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!--{% if site.duoshuo_username %}
+ 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
     // dynamic User by Hux
     var _user = '{{site.duoshuo_username}}';
@@ -223,8 +223,8 @@ layout: default
          || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
 </script>
-<!-- 多说公共JS代码 end -->
-{% endif %}
+<!-- 多说公共JS代码
+{% endif %} end -->
 
 
 {% if site.disqus_username %}
