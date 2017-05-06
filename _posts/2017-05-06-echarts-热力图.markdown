@@ -227,4 +227,4 @@ public class Test2 implements Serializable {
 
 ```
 我自己后台绘图的结果如下
-<img src="img/map.JPG"/>
+[](img/map.JPG)
