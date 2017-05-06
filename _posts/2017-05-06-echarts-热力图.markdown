@@ -4,7 +4,7 @@ title: ECharts 实现热力图
 subtitle: ' "java 根据地址转换坐标实现热力图"'
 date: 2017-05-6T10:00:00.000Z
 author: "\_XZX"
-header-img: img/post-bg-2015.jpg
+header-img: img/map.jpg
 catalog: true
 tags:
   - Echarts
@@ -227,4 +227,4 @@ public class Test2 implements Serializable {
 
 ```
 我自己后台绘图的结果如下
-![image](img/map.jpg)
+<img src="img/map.jpg"/>
