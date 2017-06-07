@@ -4,11 +4,11 @@ title: 云计算概述
 subtitle: ' "《虚拟化与云计算》之云计算"'
 date: 2017-06-07T20:00:00.000Z
 author: "\_XZX"
-header-img: img/map.JPG
+header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
-  - Echarts
-  - Java
+  - 云计算
+  - 读书笔记
 ---
 
 > 《虚拟化与云计算》读书笔记之云计算
@@ -42,7 +42,7 @@ tags:
 
 ## 云架构的基本层次
 
-![](http://xzxblog.me/img/cloud.JPG)
+![](http://xzxblog.me/img/readnote/cloud.JPG)
 
 基础设施层是经过虚拟化后的硬件资源和相关管理功能的集合
 
