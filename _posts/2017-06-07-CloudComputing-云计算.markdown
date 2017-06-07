@@ -42,7 +42,7 @@ tags:
 
 ## 云架构的基本层次
 
-![](http://xzxblog.me/img/readnote/cloud.JPG)
+![](http://xzxblog.me/img/readnote/cloud.jpg)
 
 基础设施层是经过虚拟化后的硬件资源和相关管理功能的集合
 
