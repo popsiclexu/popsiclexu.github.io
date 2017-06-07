@@ -9,15 +9,6 @@ catalog: true
 tags:
   - 读书笔记 
   - 云计算
-comments:
-  - author:
-      type: full
-      displayName: ZhenxueXu
-      url: 'https://github.com/ZhenxueXu'
-      picture: 'https://avatars3.githubusercontent.com/u/18114535?v=3&s=73'
-    content: '&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x8BC4;&#x8BBA;&#xFF01;'
-    date: 2017-04-15T18:01:44.286Z
-
 ---
 ## 前言
 最近在阅读《虚拟化与云计算》，做了一些笔记，这篇笔记关于云计算的概念、特征、分类及云架构层次。
