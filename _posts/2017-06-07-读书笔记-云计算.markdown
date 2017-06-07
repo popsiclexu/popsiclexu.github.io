@@ -1,15 +1,19 @@
 ---
 layout: post
-title: 云计算概述
-subtitle: '《虚拟化与云计算》读书笔记'
-date: 2017-06-07T17:00:00.000Z
+title: ECharts 实现热力图
+subtitle: ' "java 根据地址转换坐标实现热力图"'
+date: 2017-05-6T10:00:00.000Z
 author: "\_XZX"
-header-img: img/post-bg-2015.jpg
+header-img: img/map.JPG
 catalog: true
 tags:
-  - 读书笔记 
-  - 云计算
+  - Echarts
+  - Java
 ---
+
+> 《虚拟化与云计算》读书笔记之云计算
+
+
 ## 前言
 最近在阅读《虚拟化与云计算》，做了一些笔记，这篇笔记关于云计算的概念、特征、分类及云架构层次。
 ## 什么是云计算
