@@ -7,8 +7,8 @@ author: "\_XZX"
 header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
-  -  云计算
-  -  读书笔记
+  - 云计算
+  - 读书笔记
 ---
 
 > 《虚拟化与云计算》读书笔记之云计算
