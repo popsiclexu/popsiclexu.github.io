@@ -57,32 +57,28 @@ WORKLOAD = TPCH
 #define SET_ROWCOUNT    "LIMIT %d\n"
 #define SET_DBASE       ""
 #endif /* VECTORWISE */
-
+```
+3. 保存修改在终端中cd到dbgen目录下，执行下列命令 
 
 ```
-3. 保存修改在终端中cd到dbgen目录下，执行下列命令
-```
-//保存更改，在dbgen目录下执行
+// 保存更改，在dbgen目录下执行
 
 make -f makefile.suite
 
-//执行成功后在dbgen目录下生成dbgen和qgen文件
-
-
-
+// 执行成功后在dbgen目录下生成dbgen和qgen文件
 ```
 
 ## 运行dbgen生成.tbl数据
 
 ```
-#在dbgen目录下执行
+// 在dbgen目录下执行
 ./dbgen -s 1 -f   #-s 1 表示生成1G数据  -f覆盖之前产生的文件
 
-#执行成功后会在dbgen目录下生成八个.tbl文件，可通过下列命令查看（在dbgen目录下）
+// 执行成功后会在dbgen目录下生成八个.tbl文件，可通过下列命令查看（在dbgen目录下）
 
 ls *.tbl
 
-#看到产生八个tbl文件
+// 看到产生八个tbl文件
 ```
 
 ## 建立数据库
@@ -162,69 +158,22 @@ CREATE TABLE LINEITEM ( L_ORDERKEY    INTEGER NOT NULL,
 
 ## 导入数据
 
-生成的tbl数据每一行的末尾会有一个“|”，导致PG数据库读取时报错，需要将最后一个“|”去掉，编写下列c++程序处理文件
+生成的tbl数据每一行的末尾会有一个“|”，导致PG数据库读取时报错，需要将最后一个“|”去掉，在dbgen目录下找到print.c, 注释145和147行，如下所示
 
 
 ```
-transfer.cpp
+      }
 
+//#ifdef EOL_HANDLING
+        if (sep)
+//#endif /* EOL_HANDLING */
+        fprintf(target, "%c", SEPARATOR);
 
-
-#include <iostream>
-#include <fstream>
-#include <string>
-using namespace std;
-int main(int argc, char * argv[]) {
-    if(argc==3){
-        string s;
-        ifstream in;
-        in.open(argv[1]);
-        ofstream out;
-        out.open(argv[2]);
-        if (in.is_open()) {
-            while (getline(in, s)) {
-                int len = s.length();
-                int i = len-1;
-                //将最后一个竖号去掉才能满足postgresql的数据读取
-                if (s[i] == '|') 
-                  s[i] = '\n';
-                out << s;
-            }
-        }
-        out.close();
-        printf("success!");
-    }else{
-       printf("Error!argc:%d\n",argc);
-    }    
-      
-    return 0;
+        return(0);
 }
-
-```
-编译c++文件(在transfer.cpp所在目录下)
-```
-gcc transfer.cpp -o
-
-//执行成功后生成transfer文件
-```
-分别执行以下命令（在transfer所在目录下）去掉文件最后一个空格
-```
-
-#数据转换
-
-./transfer /2.17.3/dbgen/supplier.tbl  /2.17.3/dbgen/tbl/supplier.tbl
-./transfer /2.17.3/dbgen/part.tbl  /2.17.3/dbgen/tbl/part.tbl
-./transfer /2.17.3/dbgen/customer.tbl /2.17.3/dbgen/tbl/customer.tbl
-./transfer /2.17.3/dbgen/orders.tbl /2.17.3/dbgen/tbl/orders.tbl
-./transfer /2.17.3/dbgen/nation.tbl /2.17.3/dbgen/tbl/nation.tbl
-./transfer /2.17.3/dbgen/partsupp.tbl /2.17.3/dbgen/tbl/partsupp.tbl
-./transfer /2.17.3/dbgen/region.tbl /2.17.3/dbgen/tbl/region.tbl
-./transfer /2.17.3/dbgen/lineitem.tbl /2.17.3/dbgen/tbl/lineitem.tbl
 ```
 
 最后，将数据导入PostgreSQL数据库中
-
-
 
 ```
 su - postgres  //进入PostgreSQL数据库
