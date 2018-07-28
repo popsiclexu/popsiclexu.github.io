@@ -1,6 +1,6 @@
 # Site settings
 title: Xu Blog
-SEOTitle: XZX的博客 | Xu Blog
+SEOTitle: 许振雪的博客 | Xu Blog
 header-img: img/home-bg-o.jpg
 email: hquxzx@163.com
 description: "关于Java、数据 | XZX，Information managerment，Java Engineer| 这里是 @XZX 的个人博客，与你共同成长。"
@@ -12,8 +12,8 @@ baseurl: ""                             # for example, '/blog' if your blog host
 
 # SNS settings
 RSS: false
-weibo_username:     Mr_许123
-zhihu_username:     XZX
+weibo_username:     false
+zhihu_username:     false
 github_username:    ZhenxueXu
 #twitter_username:  huxpro
 #facebook_username:  huxpro
