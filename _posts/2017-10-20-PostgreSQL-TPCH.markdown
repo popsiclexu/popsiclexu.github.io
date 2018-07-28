@@ -12,21 +12,21 @@ tags:
 
 > 滚动查看全文
 
-### 前言
+## 前言
 TPC-H 主要目的是评价特定查询的决策支持能力，强调服务器在数据挖掘、分析处理方面的能力。查询是决策支持应用的最主要应用之一，数据仓库中的复杂查询可以分成两种类型：一种是预先知道的查询，如定期的业务报表；另一种则是事先未知的查询，称为动态查询（Ad- Hoc Query）。
 
 通俗的讲，TPC-H就是当一家数据库开发商开发了一个新的数据库操作系统，采用ＴｐＣ－Ｈ作为测试基准，来测试衡量数据库操作系统查询决策支持方面的能力
 
 在研究生阶段的数据库课程学习中，我们主要用TPCH生成不同大小的数据集，并对TPCH提供的SQL语句在POSTGRESQL数据库下进行查询优化。在这片文章中主要描述了：针对PostgreSQL数据库，如何配置编译TPCH源码并生成不同数据量的数据集导入到数据库中
 
-### 环境
+## 环境
 
 操作系统：Linux（Ubuntu16.04）   
 TPC-H工具：2.17.3  
 PostgreSQL版本：9.6.0  
 TPC-H工具下载网站：http://www.tpc.org/tpch/
 
-### 一、生成dbgen和qgen
+## 生成dbgen和qgen
 1. 解压TPCH-tools工具在dbgen目录下找到并更改makefile.suite 生成dbgen
 
 ```
@@ -72,20 +72,20 @@ make -f makefile.suite
 
 ```
 
-### 二、运行dbgen生成.tbl数据
+## 运行dbgen生成.tbl数据
 
 ```
 #在dbgen目录下执行
 ./dbgen -s 1 -f   #-s 1 表示生成1G数据  -f覆盖之前产生的文件
 
-# 执行成功后会在dbgen目录下生成八个.tbl文件，可通过下列命令查看（在dbgen目录下）
+#执行成功后会在dbgen目录下生成八个.tbl文件，可通过下列命令查看（在dbgen目录下）
 
 ls *.tbl
 
 #看到产生八个tbl文件
 ```
 
-### 三、建立数据库
+## 建立数据库
 在postgresql中建立tpch数据库，并创建表，相关表的创建语句可以从dss.ddl中复制
 
 ```
@@ -160,7 +160,7 @@ CREATE TABLE LINEITEM ( L_ORDERKEY    INTEGER NOT NULL,
 ```
 
 
-### 四、导入数据
+## 导入数据
 
 生成的tbl数据每一行的末尾会有一个“|”，导致PG数据库读取时报错，需要将最后一个“|”去掉，编写下列c++程序处理文件
 
@@ -242,7 +242,7 @@ Copy orders FROM '/2.17.3/dbgen/tbl/orders.tbl' WITH DELIMITER AS '|';
 
 ```
 
-### 五、给各表加约束条件
+## 给各表加约束条件
 
 数据表的约束条件存放在dss.ri 文件中，复制并做相应更改在数据库中执行生成相关约束。
 ```
@@ -330,7 +330,7 @@ ADD FOREIGN KEY (L_PARTKEY,L_SUPPKEY) references PARTSUPP;
 COMMIT WORK;
 ```
 
-### 六、生成查询语句
+## 生成查询语句
 
 复制qgen 和dists.dss 到queries ,cd到queries目录下执行
 
