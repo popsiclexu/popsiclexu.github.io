@@ -5,6 +5,7 @@ subtitle:   TPC-H生成不同大小数据集及导入PostgreSQL"
 date:       2018-07-28 
 author:     "Xu Zhenxue"
 header-img: "img/post-bg-universe.jpg"
+catalog: true
 tags:
     - 数据库
     - PostgreSQL
@@ -27,7 +28,7 @@ PostgreSQL版本：9.6.0
 TPC-H工具下载网站：http://www.tpc.org/tpch/
 
 ## 生成dbgen和qgen
-1. 解压TPCH-tools工具在dbgen目录下找到并更改makefile.suite 生成dbgen
+解压TPCH-tools工具在dbgen目录下找到并更改makefile.suite 生成dbgen
 
 ```
 #makefile.suite 的更改参数如下
@@ -44,7 +45,7 @@ MACHINE = LINUX
 WORKLOAD = TPCH
 
 ```
-2. 由于TPCH数据库参数没有PostgreSQL数据库选项，需要自己增加PG数据的脚本，在dbgen目录下更改tpcd.h文件
+由于TPCH数据库参数没有PostgreSQL数据库选项，需要自己增加PG数据的脚本，在dbgen目录下更改tpcd.h文件
 
 ```
 //修改tpcd.h
@@ -292,14 +293,3 @@ COMMIT WORK;
 
 http://www.cnblogs.com/joyeecheung/p/3599698.html
 
-
-```
-TRUNCATE TABLE REGION CASCADE;
-TRUNCATE TABLE NATION;
-TRUNCATE TABLE CUSTOMER;
-TRUNCATE TABLE LINEITEM;
-TRUNCATE TABLE ORDERS;
-TRUNCATE TABLE PART;
-TRUNCATE TABLE PARTSUPP;
-TRUNCATE TABLE SUPPLIER;
-```
