@@ -1,15 +1,24 @@
 ---
-layout:     post
-title:      "AirFlow定时调度执行Talend ETL任务"
-subtitle:   "Using Airflow to Manage Talend ETL Jobs"
-date:       2018-07-28 
-author:     "Xu Zhenxue"
-header-img: "img/post-bg-universe.jpg"
+layout: post
+title: AirFlow定时调度执行Talend ETL任务
+subtitle: Using Airflow to Manage Talend ETL Jobs
+date: 2018-07-28T00:00:00.000Z
+author: Xu Zhenxue
+header-img: img/post-bg-universe.jpg
 catalog: true
 tags:
-    - ETL
-    - 任务调度
-    - Airflow
+  - ETL
+  - 任务调度
+  - Airflow
+comments:
+  - author:
+      type: github
+      displayName: ZhenxueXu
+      url: 'https://github.com/ZhenxueXu'
+      picture: 'https://avatars0.githubusercontent.com/u/18114535?v=4&s=73'
+    content: '&#x8BC4;&#x8BBA;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;'
+    date: 2018-07-28T17:04:51.148Z
+
 ---
 
 > 滚动阅读全文  
