@@ -50,7 +50,7 @@ Talend是一个开源的ELT任务构建工具，可以通过简单拖拽的方�
 
 然后，将这个ETL任务构建并导出，目录结构如下：
 
-![image](/img/job.png)
+![image](/img/job-dir.png)
 
 我们使用在linux环境中执行shell文件的方式执行ETL任务。
 
