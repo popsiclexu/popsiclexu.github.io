@@ -29,10 +29,10 @@ airflow 是一个编排、调度和监控工作流的平台，由Airbnb开源，
 
 ## AirFlow基础概念  
   
- Airflow主要是将工作流的相关信息定义到一个Python文件中，airflow根据文件中的定义信息执行工作流，在Airflow pipeline定义中，主要涉及两个类： <font color='red' style='background-color:#EAEDED;'>DAG</font>，<font color='red' style='background-color:#EAEDED;'>Operator</font>
+ Airflow主要是将工作流的相关信息定义到一个Python文件中，airflow根据文件中的定义信息执行工作流，在Airflow pipeline定义中，主要涉及两个类： <code color='red' >DAG</code>，<code >Operator</code>
 
-<font color='red' style='background-color:#EAEDED;'>DAG</font> : 有向无环图，它将定义的任务按照依赖关系组织起来   
-<font color='red' style='background-color:#EAEDED;'>Operator</font>：用来描述每个任务具体做的事，airflow内置了很多operator，如<font color='red' style='background-color:#EAEDED;'>BashOperator</font> 执行一个bash 命令，<font color='red' style='background-color:#EAEDED;'>PythonOperator</font> 调用任意的Python 函数，<font color='red' style='background-color:#EAEDED;'>EmailOperator</font> 用于发送邮件，<font color='red' style='background-color:#EAEDED;'>HTTPOperator</font> 用于发送HTTP请求， <font color='red' style='background-color:#EAEDED;'>SqlOperator</font> 用于执行SQL命令…同时，用户可以自定义Operator，这给用户提供了极大的便利性。  
+<code color='red' style='background-color:#EAEDED;'>DAG</code> : 有向无环图，它将定义的任务按照依赖关系组织起来   
+<code color='red' style='background-color:#EAEDED;'>Operator</code>：用来描述每个任务具体做的事，airflow内置了很多operator，如<code color='red' style='background-color:#EAEDED;'>BashOperator</code> 执行一个bash 命令，<code color='red' style='background-color:#EAEDED;'>PythonOperator</code> 调用任意的Python 函数，<code color='red' style='background-color:#EAEDED;'>EmailOperator</code> 用于发送邮件，<code color='red' style='background-color:#EAEDED;'>HTTPOperator</code> 用于发送HTTP请求， <code color='red' style='background-color:#EAEDED;'>SqlOperator</code> 用于执行SQL命令…同时，用户可以自定义Operator，这给用户提供了极大的便利性。  
 通过DAG和Operator结合起来就可以构建复杂的工作流了  
 
 ## Talend简介
@@ -46,11 +46,11 @@ Talend是一个开源的ELT任务构建工具，可以通过简单拖拽的方�
 ### 1.通过Talend 设计、构建ETL任务
 
 打开Talend设计如下简单的ETL任务，将一个CSV文件导入到数据库中：
-![image](/img/etl.png)
+![image](http://zhenxuexu.github.io/img/etl.png)
 
 然后，将这个ETL任务构建并导出，目录结构如下：
 
-![image](/img/job-dir.png)
+![image](http://zhenxuexu.github.io/img/job-dir.png)
 
 我们使用在linux环境中执行shell文件的方式执行ETL任务。
 
@@ -95,6 +95,4 @@ t1 = BashOperator(
 ### 3.调度执行ETL任务
 完成以上工作，我们启动airflow webserver服务器后,便可以在airflow UI界面看到我们定义的ETl任务<font color='red' style='background-color:#EAEDED;'>csv_to_data</font>，可以进行相应操作。
 
-![image](/img/airflow.png)
-
-
+![image](http://zhenxuexu.github.io/img/airflow.png)
