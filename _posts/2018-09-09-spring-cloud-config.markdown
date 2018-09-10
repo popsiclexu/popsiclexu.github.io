@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Cloud学习笔记（一）：Spring Cloud Config
+title: Spring Cloud学习笔记(一):Spring Cloud Config
 subtitle: Spring Cloud Config配置使用
 date: 2018-09-09T00:00:00.000Z
 author: Xu Zhenxue
@@ -36,9 +36,9 @@ tags:
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
+                       <groupId>org.springframework.cloud</groupId>
+                       <artifactId>spring-cloud-starter-config</artifactId>
+                </dependency>
 ```
 
 ### 2、修改配置文件
