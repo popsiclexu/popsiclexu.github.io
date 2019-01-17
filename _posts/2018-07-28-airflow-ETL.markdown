@@ -18,6 +18,69 @@ comments:
       picture: 'https://avatars0.githubusercontent.com/u/18114535?v=4&s=73'
     content: '&#x8BC4;&#x8BBA;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;'
     date: 2018-07-28T17:04:51.148Z
+  - author:
+      type: github
+      displayName: linkcheng
+      url: 'https://github.com/linkcheng'
+      picture: 'https://avatars0.githubusercontent.com/u/8966066?v=4&s=73'
+    content: >
+      &#x4F60;&#x597D;&#xFF0C;&#x8BF7;&#x6559;&#x4E00;&#x4E2A;&#x5173;&#x4E8E;
+      airflow &#x4E2D;&#x4E00;&#x4E2A; DAG &#x4E2D;&#x5404;&#x4E2A; Operator
+      &#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x95EE;&#x9898;&#x3002;
+
+
+      default_args = {
+          &apos;owner&apos;: &apos;python&apos;,
+          &apos;depends_on_past&apos;: True,
+          &apos;start_date&apos;: datetime(2019, 1, 17, 10, 45, 0),
+          &apos;email&apos;: [&apos;example@qq.com&apos;],
+          &apos;email_on_failure&apos;: True,
+          &apos;email_on_retry&apos;: False,
+          &apos;retries&apos;: 1,
+          &apos;retry_delay&apos;: timedelta(minutes=5),
+          &apos;queue&apos;: &apos;test4&apos;,
+          # &apos;pool&apos;: &apos;backfill&apos;,
+          # &apos;priority_weight&apos;: 10,
+          # &apos;end_date&apos;: datetime(2020, 1, 1),
+      }
+
+
+      dag = DAG(&apos;sync_cashbill_new&apos;, default_args=default_args,
+      schedule_interval=timedelta(minutes=15))
+
+
+      start = BashOperator(
+          task_id=&apos;activate_virtualenv&apos;,
+          bash_command=&apos;source /data/virtualenv/test-bi-transfer/bin/activate&apos;,
+          dag=dag)
+
+      go_lib = BashOperator(
+          task_id=&apos;go_lib_directory&apos;,
+          bash_command=&apos;cd /data/code/bi-transfer/lib&apos;,
+          dag=dag)
+
+      sync = BashOperator(
+          task_id=&apos;sync_CashBill&apos;,
+          bash_command=&apos;sudo python2.7 mysql_sync.py update -t v2.CashBill&apos;,
+          dag=dag)
+
+      end = EmailOperator(
+          task_id=&apos;send_email&apos;,
+          to=&apos;zheng.long@shoufuyou.com&apos;,
+          subject=&apos;mysql_sync done&apos;,
+          html_content=&apos;mysql_sync success&apos;,
+          dag=dag)
+
+      start &gt;&gt; go_lib &gt;&gt; sync &gt;&gt; end
+
+
+      &#x4EE5;&#x4E0A;&#x662F;&#x6211;&#x5B9A;&#x4E49;&#x7684;
+      DAG&#xFF0C;&#x73B0;&#x5728;&#x6709;&#x4E2A;&#x95EE;&#x9898;&#x662F; sync
+      &#x8FD9;&#x4E00;&#x6B65;&#x4E0D;&#x80FD;&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#x8FD9;&#x4E00;&#x6B65;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x524D;&#x4E24;&#x6B65;&#x6267;&#x884C;&#x6210;&#x529F;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x4E4B;&#x524D;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x6FC0;&#x6D3B;&#x4E00;&#x4E2A;python&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4EE5;&#x53CA;&#x5207;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x3002;&#x6211;&#x60F3;&#x8BF7;&#x6559;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x53EF;&#x4EE5;&#x5728;&#x7B2C;&#x4E09;&#x6B65;&#x4F7F;&#x7528;&#x524D;&#x4E24;&#x6B65;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x6FC0;&#x6D3B;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4EE5;&#x53CA;&#x8FDB;&#x5165;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#xFF1F;
+
+
+      &#x975E;&#x5E38;&#x8C22;&#x8C22;&#x3002;
+    date: 2019-01-17T04:12:01.842Z
 
 ---
 
