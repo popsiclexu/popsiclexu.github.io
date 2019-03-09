@@ -8,10 +8,6 @@ keyword: "许振雪, 博客, zhenxuexu, Java学习，数据挖掘，大数据，
 url: "http://xuzhenxue.cn"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-#Plugin
-plugins: [jekyll-paginate,jekyll-sitemap]
-# - jekyll-sitemap    #jekyll的站点地图插件，用于生成站点地图
-
 
 # SNS settings
 RSS: false
@@ -36,7 +32,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+gems: [jekyll-paginate,jekyll-sitemap]
 
 
 
@@ -77,6 +73,10 @@ ga_track_id: 'UA-135891885-1'            # Format: UA-xxxxxx-xx
 ga_domain: xuzhenxue.cn
 
 
+#Plugin
+plugins: [jekyll-paginate,jekyll-sitemap]
+# - jekyll-sitemap    #jekyll的站点地图插件，用于生成站点地图
+
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -97,6 +97,7 @@ service-worker: true
 
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
+
 
 
 # Friends
