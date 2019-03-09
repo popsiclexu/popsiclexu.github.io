@@ -9,8 +9,8 @@ url: "http://xuzhenxue.cn"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 #Plugin
-plugins:
- - jekyll-sitemap    #jekyll的站点地图插件，用于生成站点地图
+#plugins:
+# - jekyll-sitemap    #jekyll的站点地图插件，用于生成站点地图
 
 
 # SNS settings
