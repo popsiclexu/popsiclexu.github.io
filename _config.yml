@@ -5,7 +5,7 @@ header-img: img/home-bg-o.jpg
 email: hquxzx@163.com
 description: "关于Java、大数据 | XZX，Information managerment，Java Engineer| 这里是许振雪的个人博客，与你共同成长。"
 keyword: "许振雪, 博客, zhenxuexu, Java学习，数据挖掘，大数据，计算机科学，编程，分享"
-url: "http://zhenxuexu.github.io"              # your host, for absolute URL
+url: "http://xuzhenxue.cn"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 #Plugin
