@@ -8,6 +8,9 @@ keyword: "许振雪, 博客, zhenxuexu, Java学习，数据挖掘，大数据，
 url: "http://zhenxuexu.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
+#Plugin
+plugins:
+ - jekyll-sitemap    #jekyll的站点地图插件，用于生成站点地图
 
 
 # SNS settings
