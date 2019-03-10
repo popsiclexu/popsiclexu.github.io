@@ -4,7 +4,7 @@ title: Spring Cloud学习笔记(一):Spring Cloud Config
 subtitle: Spring Cloud Config配置使用
 date: 2018-09-09T00:00:00.000Z
 author: Xu Zhenxue
-header-img: img/post-bg-universe.jpg
+header-style: text
 catalog: true
 tags:
   - Spring Cloud

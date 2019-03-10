@@ -4,7 +4,7 @@ title: Spring Boot——配置不同环境的属性文件
 subtitle: 应用profile改变环境配置
 date: 2018-09-09T00:00:00.000Z
 author: Xu Zhenxue
-header-img: img/post-bg-universe.jpg
+header-style: text
 catalog: true
 tags:
   - Spring Boot

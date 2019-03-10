@@ -4,7 +4,7 @@ title: Spring Boot——读取属性文件的多种方法
 subtitle: Spring中的属性处理
 date: 2018-09-09T00:00:00.000Z
 author: Xu Zhenxue
-header-img: img/post-bg-universe.jpg
+header-style: text
 catalog: true
 tags:
   - Spring Boot
