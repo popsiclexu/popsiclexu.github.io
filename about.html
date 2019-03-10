@@ -3,15 +3,6 @@ layout: page
 title: About
 description: 'Hey, this is XZX.'
 header-img: img/post-bg-digital-native.jpg
-comments:
-  - author:
-      type: full
-      displayName: ZhenxueXu
-      url: 'https://github.com/ZhenxueXu'
-      picture: 'https://avatars3.githubusercontent.com/u/18114535?v=3&s=73'
-    content: test
-    date: 2017-04-15T17:42:08.869Z
-
 ---
 
 <!-- Language Selector -->
@@ -22,127 +13,15 @@ comments:
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-
-    <!--copied from markdown -->
-    <blockquote><p>欲带皇冠<br>
-    必先承其重</p></blockquote>
-	<div style="width: 100%; text-align:  center">
-    <p>Hey，我是<strong>许振雪</strong><br>
-	Java程序员 &amp; 学生<br>
-	<stong>2017</strong><br>
-	毕业于<strong>华侨大学</strong>,本科<br>
-	信息管理与信息系统专业</br>
-	Now<br>
-	<strong>贵州大学</strong>,计算机硕士<br>
-	ZhenxueXu@gmail.com</p>
-	</div>
-	
-    <h5>Talks</h5>
-
-    <ul>
-   <li><a href="{{ site.url }}" title="First blog">Hello 2017</a> · 泉州 2017</li>
-    
-    </ul>
+    {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
 </div>
 
 <!-- English Version -->
 <div class="en post-container">
-    <blockquote><p>Want to wear the crown, <br>
-     &nbps;&nbps Must firstly bear its heavy.</p></blockquote>
-	<div style="width: 100%; text-align:  center">
-    <p>Hey，I am<strong>Xu Zhenxue（许振雪）</strong><br>
-	Java Engineer &amp; Student<br>
-	<stong>2017</strong><br>
-	Graduate from <strong> HuaQiao University</strong>,undergraduate<br>
-	Major in Information Management and Information System</br>
-	Now<br>
-	In <strong> GuiZhou University</strong>,as a postgraduate of Computer Science<br>
-	ZhenxueXu@gmail.com</p>
-	</div>
-
-    <h5>Talks</h5>
-
-    <ul>
-    <li><a href="{{ site.url }}/" title="First blog">Hello 2017</a> · Quanzhou 2017</li>
-    </ul>
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
 </div>
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
-            window.location.hash = "#en"
-        }
-    }
-
-    // init
-    _render();
-</script>
-
-
-{% if site.duoshuo_username %}
-<!-- 多说评论框 start -->
-<div class="comment">
-    <!-- This id is used for indexing my loss comments forcedly -->
-    <div class="ds-thread"
-    {% if site.duoshuo_username == "huxblog" %}
-        data-thread-id="1187623191091085319"
-    {% else %}
-    <!-- U can just use this key generated to index comments at page about -->
-        data-thread-key="{{site.duoshuo_username}}/about"
-    {% endif %}
-
-    data-title="{{page.title}}"
-    data-url="{{site.url}}/about/"></div>
-</div>
-<!-- 多说评论框 end -->
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User hacking by Hux
-    var _user = '{{site.duoshuo_username}}';
-
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<!-- 多说公共JS代码 end -->
-{% endif %}
 
 
 {% if site.disqus_username %}
