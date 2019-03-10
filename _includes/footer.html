@@ -61,6 +61,21 @@
     <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 -->
 
+<!-- script pointing to jekyll-search.js-->
+<script src='{{ "/js/simple-jekyll-search.min.js " | prepend: site.baseurl }}'></script>
+
+ <script>
+      window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 5,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+ </script>
 
 
 {% if page.title == 'Tags' %}
