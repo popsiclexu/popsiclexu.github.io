@@ -38,7 +38,7 @@ public int run(TreeNode root) {
 
 思路二：广度优先遍历，逐层遍历节点，遇到第一个叶子节点返回其深度；
 
-```
+```java
 public int runDFS(TreeNode root){
 		if (root == null){return 0;}
 		LinkedList<TreeNode> linkedList = new LinkedList<>();
@@ -70,7 +70,7 @@ Evaluate the value of an arithmetic expression in Reverse Polish Notation.
 Valid operators are+,-,*,/. Each operand may be an integer or another expression.
 
 Some examples:
-```
+```json
 ["2", "1", "+", "3", "*"] -> ((2 + 1) * 3) -> 9
 ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6
 ```
