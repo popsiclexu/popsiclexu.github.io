@@ -216,6 +216,6 @@ public class FacetsApplication {
 ```
 输出：
 
-```JSON
+```json
 [{"username":"xzx","say":"hello world"},{"username":"xzx","say":"hello world"},{"username":"xzx","say":"hello world"}]
 ```
