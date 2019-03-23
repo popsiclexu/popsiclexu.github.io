@@ -555,6 +555,8 @@ pre.highlight {
     width: 46px;
   }
 }
+pre[class='highlight'] {background-color:#24292e;}
+
 body {
   /* Hux learn from
      *     TypeIsBeautiful,
