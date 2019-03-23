@@ -30,7 +30,7 @@ Greenplum：6.0.x，编译安装
 编译Greenplum在执行README.CentOS.bash文件安装依赖时可能出现以下问题：
 ###### 1. setuptools is too old 
 
-```
+```shell
 # 升级setuptools
 
 pip install --upgrade setuptools
