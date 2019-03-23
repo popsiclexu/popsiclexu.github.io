@@ -28,7 +28,7 @@ Greenplum：6.0.x，编译安装
 
 #### 一、依赖安装失败问题
 编译Greenplum在执行README.CentOS.bash文件安装依赖时可能出现以下问题：
-1. setuptools is too old 
+###### 1. setuptools is too old 
 
 ```
 # 升级setuptools
@@ -36,7 +36,7 @@ Greenplum：6.0.x，编译安装
 pip install --upgrade setuptools
 ```
 
-2. 安装多个依赖报错：Cannot uninstall 'XXXXX'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
+###### 2. 安装多个依赖报错：Cannot uninstall 'XXXXX'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
 
 ```
 # 单独安装或升级相应依赖，加上 --ignore-installed参数
@@ -47,7 +47,7 @@ pip install --upgrade   XXXXX  --ignore-installed
 
 #### 二、编译安装数据库出现的问题
 
-1. Modules/constants.h:7:18: fatal error: lber.h: No such file or directory
+###### 1. Modules/constants.h:7:18: fatal error: lber.h: No such file or directory
 
 ```
 # yum安装 python-devel openldap-devel
@@ -56,7 +56,7 @@ sudo yum install python-devel
 sudo yum install openldap-devel
 
 ```
-2. checking Checking ORCA version… configure: error: Your ORCA version is expected to be X.X.XXX  
+###### 2. checking Checking ORCA version… configure: error: Your ORCA version is expected to be X.X.XXX  
 **每个数据库节点均要编译安装ORCA，并将配置/etc/ld.so.conf** 
 
 ```
@@ -75,7 +75,7 @@ vi /etc/ld.so.conf.d/usrlocallib.conf
 # 刷新动态链接库缓存
 ldconfig
 ```
-3. gpcheck提示：on device (/dev/sda3) blockdev readahead value '8192' does not match expected value '16384'
+###### 3. gpcheck提示：on device (/dev/sda3) blockdev readahead value '8192' does not match expected value '16384'
 
 
 ```
@@ -88,7 +88,7 @@ echo '/sbin/blockdev --setra 16384 /dev/sda2' >> /etc/rc.local
 ```
 
 
-4. gpcheck提示：XFS filesystem on device /dev/sda3 has 5 XFS mount options and 1 are expected
+###### 4. gpcheck提示：XFS filesystem on device /dev/sda3 has 5 XFS mount options and 1 are expected
 
 ```
 # 执行df查看自己的数据目录改在的磁盘，修改数据所在磁盘的参数即可，其他磁盘的报错信息可以忽略
@@ -101,7 +101,7 @@ UUID=203ac506-a2fb-4465-88ac-df2caefd3268 /data  xfs     defaults        0 0
 # 修改后
 UUID=203ac506-a2fb-4465-88ac-df2caefd3268 /data xfs     defaults,allocsize=16348k,inode64,noatime        0 0
 ```
-5. 初始化时提示: /usr/local/gpdb/bin/postgres: error while loading shared libraries: libgpopt.so.3: cannot open shared object file: No such file or directory  
+###### 5. 初始化时提示: /usr/local/gpdb/bin/postgres: error while loading shared libraries: libgpopt.so.3: cannot open shared object file: No such file or directory  
 解决的方法也很简单，这个文件实际是在/usr/local/lib里面，把这个目录加进/usr/local/gpdb/greenplum_path.sh文件的LD_LIBRARY_PATH配置中。
 
 ## 总结
