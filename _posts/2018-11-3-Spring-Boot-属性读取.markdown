@@ -20,7 +20,7 @@ catalog: true
 程序默认加载application.yml(或application.properties)属性文件。如需要加载其它属性文件使用<code style='color:red'>@PropertySource</code>注解:  
 例如: 加载user.properties文件
 
-```
+```java
 @PropertySource("user.properties")
 ```
 加载完属性文件后我们可以通过以下集中方式获取属性设置的值
@@ -46,7 +46,7 @@ Environment类对属性的操作有多种方法，比如对null属性赋予默�
 使用@configuration注解可以读取文件中的属性，根据属性key自动为Bean赋值；如下我们注入一个User bean并通过该注解为其属性赋值。
 
 注：User bean的属性名与文件中的属性名一致；
-```Java
+```java
 @Bean
 	@Qualifier("conPro")
 	@ConfigurationProperties(prefix="com.xzx")
@@ -56,7 +56,7 @@ Environment类对属性的操作有多种方法，比如对null属性赋予默�
 ```
 User.java
 
-```Java
+```java
 package com.facets.core.entity;
 
 
@@ -83,7 +83,7 @@ public class User {
 ##### 3、@Value方式
 
 我们还可以使用属性占位符的方式获取属性值；
-```Java
+```java
 @Value("${com.xzx.username}")
 	private String username;
 	
@@ -102,7 +102,7 @@ public class User {
 
 以上三种方式合并文件为
 
-```Java
+```java
 package com.facets.core.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -160,7 +160,7 @@ public class UserConfig {
 ### 三、测试
 属性文件user.properties
 
-```Java
+```java
 com.xzx.username=xzx
 com.xzx.say=hello worldFacets
 ```
@@ -168,7 +168,7 @@ com.xzx.say=hello worldFacets
 
 
 FacetsApplication.java
-```Java
+```java
 package com.facets.core;
 
 import java.util.ArrayList;
