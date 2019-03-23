@@ -27,7 +27,7 @@ catalog: true
 #### 二、读取属性值的方式
 ##### 1、Environment检索属性
 
-```Java
+```java
 @Autowired
 	private Environment env;
 	@Bean
