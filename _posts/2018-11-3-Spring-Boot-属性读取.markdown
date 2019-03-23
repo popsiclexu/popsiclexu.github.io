@@ -27,7 +27,7 @@ catalog: true
 #### 二、读取属性值的方式
 ##### 1、Environment检索属性
 
-```
+```Java
 @Autowired
 	private Environment env;
 	@Bean
@@ -46,7 +46,7 @@ Environment类对属性的操作有多种方法，比如对null属性赋予默�
 使用@configuration注解可以读取文件中的属性，根据属性key自动为Bean赋值；如下我们注入一个User bean并通过该注解为其属性赋值。
 
 注：User bean的属性名与文件中的属性名一致；
-```
+```Java
 @Bean
 	@Qualifier("conPro")
 	@ConfigurationProperties(prefix="com.xzx")
@@ -56,7 +56,7 @@ Environment类对属性的操作有多种方法，比如对null属性赋予默�
 ```
 User.java
 
-```
+```Java
 package com.facets.core.entity;
 
 
@@ -83,7 +83,7 @@ public class User {
 ##### 3、@Value方式
 
 我们还可以使用属性占位符的方式获取属性值；
-```
+```Java
 @Value("${com.xzx.username}")
 	private String username;
 	
@@ -102,7 +102,7 @@ public class User {
 
 以上三种方式合并文件为
 
-```
+```Java
 package com.facets.core.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -160,7 +160,7 @@ public class UserConfig {
 ### 三、测试
 属性文件user.properties
 
-```
+```Java
 com.xzx.username=xzx
 com.xzx.say=hello worldFacets
 ```
@@ -168,7 +168,7 @@ com.xzx.say=hello worldFacets
 
 
 FacetsApplication.java
-```
+```Java
 package com.facets.core;
 
 import java.util.ArrayList;
@@ -216,6 +216,6 @@ public class FacetsApplication {
 ```
 输出：
 
-```
+```JSON
 [{"username":"xzx","say":"hello world"},{"username":"xzx","say":"hello world"},{"username":"xzx","say":"hello world"}]
 ```

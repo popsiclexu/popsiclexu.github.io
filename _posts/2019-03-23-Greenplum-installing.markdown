@@ -38,7 +38,7 @@ pip install --upgrade setuptools
 
 ###### 2. 安装多个依赖报错：Cannot uninstall 'XXXXX'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
 
-```
+```shell
 # 单独安装或升级相应依赖，加上 --ignore-installed参数
 
 pip install --upgrade   XXXXX  --ignore-installed
@@ -49,7 +49,7 @@ pip install --upgrade   XXXXX  --ignore-installed
 
 ###### 1. Modules/constants.h:7:18: fatal error: lber.h: No such file or directory
 
-```
+```shell
 # yum安装 python-devel openldap-devel
 
 sudo yum install python-devel
@@ -59,7 +59,7 @@ sudo yum install openldap-devel
 ###### 2. checking Checking ORCA version… configure: error: Your ORCA version is expected to be X.X.XXX  
 **每个数据库节点均要编译安装ORCA，并将配置/etc/ld.so.conf** 
 
-```
+```shell
 vi /etc/ld.so.conf
 # 内容如下
 include ld.so.conf.d/*.conf
@@ -78,7 +78,7 @@ ldconfig
 ###### 3. gpcheck提示：on device (/dev/sda3) blockdev readahead value '8192' does not match expected value '16384'
 
 
-```
+```shell
 #修改 /dev/sda3 盘的预读扇区
 blockdev --setra 16384 /dev/sda3
 
@@ -90,7 +90,7 @@ echo '/sbin/blockdev --setra 16384 /dev/sda2' >> /etc/rc.local
 
 ###### 4. gpcheck提示：XFS filesystem on device /dev/sda3 has 5 XFS mount options and 1 are expected
 
-```
+```shell
 # 执行df查看自己的数据目录改在的磁盘，修改数据所在磁盘的参数即可，其他磁盘的报错信息可以忽略
 
 vi /etc/fstab
